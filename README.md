@@ -6,7 +6,7 @@
 
 ## 1.1. 前言
 
-本文旨在帮助有需要且有一定编程基础的 R 语言用户迁移到 Python3，亦可作为两种语言的速查表使用。本文档受到[参考资料[1]](http://mathesaurus.sourceforge.net/r-numpy.html)的启发，在其基础上更新了一些过时的内容，并补充了许多新版本的内容与个人实践的结果。R 和 Python 都是很棒的科学计算工具，我在学习和使用这两种语言上都经历了许多痛苦并快乐着的时光，本文不想去讨论语言优劣，更无意引战。从个人学习历程上而言，我先接触了 Python Web 开发，而后接触到 R 的科学计算，所以本文的会更多的从 Python 出发与 R 做对比。
+本文旨在帮助有一定编程基础的 R 语言用户迁移到 Python3，亦可作为两种语言的速查表使用。本文档受到[这篇文章[1]](http://mathesaurus.sourceforge.net/r-numpy.html)的启发，在其基础上更新了一些过时的内容，并补充了许多新版本的内容与个人实践的结果。R 和 Python 都是很棒的工具，本文不想去讨论语言优劣。本文主要会从科学计算的角度展示 Python 与 R 的等价操作。
 
 > [1] http://mathesaurus.sourceforge.net/r-numpy.html  
 Time-stamp: "2007-11-09T16:46:36 vidar"  
@@ -115,19 +115,6 @@ try:
     Ai = LA.inv(A)
 except LA.LinAlgError:
     Ai = LA.pinv(A)
-```
-
-
-### 利用 Label 对图像着色
-
-```python
-# python
-x = df["label"].astype('category').cat.codes    # str to category to int
- 
-y = df["y"]
-t = x % 9
-fig, ax = plt.subplots(1, 1)
-ax.scatter(x, y, c=t, cmap='Set1')
 ```
 
 ### 进度条
